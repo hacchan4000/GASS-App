@@ -31,6 +31,10 @@ Route::get('/tokoPage', function () {
     return view('tokopage');
 })->name('toko');
 
+Route::get('/notifikasi', function () {
+    return view('notifikasi');
+})->name('notifikasi');
+
 
 
 Route::get('dashboard', function () {
