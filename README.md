@@ -13,7 +13,7 @@
 [forks-shield]: https://img.shields.io/github/forks/hacchan4000/GASS-App?style=flat-square&color=%23ADD8E6
 [forks-url]: https://github.com/hacchan4000/GASS-App/fork
 
-[license-shield]: https://img.shields.io/github/license/hacchan4000/pancaran?style=flat-square&color=%23ADD8E6
+[license-shield]: https://img.shields.io/github/license/hacchan4000/GASS-App?style=flat-square&color=%23ADD8E6
 [license-url]: https://github.com/hacchan4000/GASS-App/blob/main/LICENSE
 
 </div>
