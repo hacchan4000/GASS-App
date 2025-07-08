@@ -210,7 +210,7 @@
                   </a>
                 </li>
                 <li class="nav-link">
-                  <a href="profilepage.html">
+                  <a href="{{ url('/homePeminjam') }}">
                     <i class='bx bx-user icon' ></i>
                     <span class="text nav-text">Profile</span>
                   </a>

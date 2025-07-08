@@ -188,31 +188,31 @@
               </li>
               <ul class="menu-links">
                 <li class="nav-link">
-                  <a href="#">
+                  <a href="{{ url('/homePembeli') }}">
                     <i class='bx bx-home-alt icon' ></i>
                     <span class="text nav-text">Home</span>
                   </a>
                 </li>
                 <li class="nav-link">
-                  <a href="profilepage.html">
+                  <a href="{{ url('/profile') }}">
                     <i class='bx bx-user icon' ></i>
                     <span class="text nav-text">Profile</span>
                   </a>
                 </li>
                 <li class="nav-link">
-                  <a href="#">
+                  <a href="{{ url('/notifikasi') }}">
                     <i class='bx bx-bell icon' ></i>
                     <span class="text nav-text">Notif</span>
                   </a>
                 </li>
                 <li class="nav-link">
-                  <a href="roomchat.html">
+                  <a href="{{ url('/roomChat') }}">
                     <i class='bx bx-conversation icon' ></i>
                     <span class="text nav-text">Chat</span>
                   </a>
                 </li>
                 <li class="nav-link">
-                  <a href="tokopage.html">
+                  <a href="{{ url('/tokoPage') }}">
                     <i class='bx bx-store-alt icon' ></i>
                     <span class="text nav-text">Stores</span>
                   </a>
