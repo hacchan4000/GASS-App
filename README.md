@@ -25,12 +25,10 @@
     <img src="https://github.com/dash4k/tugas-akhir-alpro-1/assets/133938416/ff71757a-1b51-44b7-b14e-b53b061d9815" alt="Logo" width="230" height="259">
   </a>
 
-  <h3 align="center">Project Sistem Informasi dan Pemrograman Berbasis Web</h3>
+  <h3 align="center">Project Pemrogaman Berbasis Web</h3>
 
   <p align="center">
-    Papan Acara Udayana adalah sebuah aplikasi berbasis web yang menjadi wadah untuk penyebaran informasi kegiatan-kegiatan yang diselenggarakan di
-    Universitas Udayana baik dari Unit Kampus, Ormawa, dan pihak luar yang bekerjama dengan Universitas Udayana.
-    Pada Aplikasi ini mahasiswa dapat mendaftar dan mengikuti kegiatan yang ditampilkan untuk mendapatkan sertifikat yang langsung dikonversi menjadi SKP (Skor Kredit Partisipan).
+    Go And Start the Street adalah sebuah aplikasi berbasis web yang menjadi wadah untuk memfasilitasi proses penyewaan motor di Pulau Bali secara online, mulai dari pencarian motor, pemesanan, hingga pembayaran. Website ini memungkinkan pengguna untuk melihat daftar motor yang tersedia lengkap dengan informasi spesifikasi, harga sewa, lokasi pengambilan, serta ulasan dari pelanggan sebelumnya.
   </p>
 </div>
 </br>
