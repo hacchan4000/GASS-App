@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <!-- dibawah ini dua file buat css -->
-    <link rel="stylesheet" href="public/css/style/login-header.css">
-    <link rel="stylesheet" href="public/css/style/body-login.css">
+    <link rel="stylesheet" href="css/style/login-header.css">
+    <link rel="stylesheet" href="css/style/body-login.css">
 
     
     
@@ -14,7 +14,7 @@
 
 <body>
    <header>
-    <img class="logo-unud" src="gambar/background/newUnud.jpg" alt="">
+    <img class="logo-unud" src="css/gambar/background/newUnud.jpg" alt="">
     <nav class="navigasi">
         <a href="#">Home</a>
         <a href="#">About</a>
