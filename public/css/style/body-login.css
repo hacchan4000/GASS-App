@@ -8,7 +8,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/project-GASS/gambar/newLoginBg.jpg') !important; /* Make sure path is correct */
+    background-image: url('css/gambar/newLoginBg.jpg') !important; /* Make sure path is correct */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -162,4 +162,5 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
 

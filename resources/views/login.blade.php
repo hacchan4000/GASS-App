@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <!-- dibawah ini dua file buat css -->
-    <link rel="stylesheet" href="public/css/style/login-header.css">
-    <link rel="stylesheet" href="public/css/style/body-login.css">
+    <link rel="stylesheet" href="css/style/login-header.css">
+    <link rel="stylesheet" href="css/style/body-login.css">
 
     
     
