@@ -7,14 +7,14 @@
 [![WTFPL License][license-shield]][license-url]
 
 <!-- SHIELDS -->
-[contributors-shield]: https://img.shields.io/github/contributors/jovianka/pancaran?style=flat-square&color=%23ADD8E6
-[contributors-url]: https://github.com/jovianka/pancaran/graphs/contributors
+[contributors-shield]: https://img.shields.io/github/contributors/hacchan4000/GASS-App?style=flat-square&color=%23ADD8E6
+[contributors-url]: https://github.com/hacchan4000/GASS-App/graphs/contributors
 
-[forks-shield]: https://img.shields.io/github/forks/jovianka/pancaran?style=flat-square&color=%23ADD8E6
-[forks-url]: https://github.com/jovianka/pancaran/fork
+[forks-shield]: https://img.shields.io/github/forks/hacchan4000/GASS-App?style=flat-square&color=%23ADD8E6
+[forks-url]: https://github.com/hacchan4000/GASS-App/fork
 
-[license-shield]: https://img.shields.io/github/license/jovianka/pancaran?style=flat-square&color=%23ADD8E6
-[license-url]: https://github.com/jovianak/pancaran/blob/main/LICENSE
+[license-shield]: https://img.shields.io/github/license/hacchan4000/pancaran?style=flat-square&color=%23ADD8E6
+[license-url]: https://github.com/hacchan4000/GASS-App/blob/main/LICENSE
 
 </div>
 
@@ -43,7 +43,7 @@
 1. Clone this repo
 
    ```bash
-   git clone https://github.com/jovianka/pancaran.git
+   git clone https://github.com/hacchan4000/GASS-App.git
 
 2. Install dependency
 
