@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
     public function login(){
-        return view("auth.login");
+        return view("auth.loginbaru");
     }
     function loginPost(Request $request){
         $request->validate([   
@@ -23,11 +23,11 @@ class AuthController extends Controller
             return redirect()->intended(route("home"));
         }
 
-        return redirect(route("login"))->with("error", "Login gagal");
+        return redirect(route("loginbaru"))->with("error", "Login gagal");
     }
 
     function register(){
-        return view("auth.register");
+        return view("auth.registerbaru");
     }
 
     function registerPost(Request $request){
@@ -46,9 +46,9 @@ class AuthController extends Controller
         $user->tipe = $request->tipe;
 
         if ($user->save()) {
-            return redirect(route("login"))->with("success", "berhasil nambah user");
+            return redirect(route("loginbaru"))->with("success", "berhasil nambah user");
         }
 
-        return redirect(route("register"))->with("error", "gagal nambah user");
+        return redirect(route("registerbaru"))->with("error", "gagal nambah user");
     }
 }

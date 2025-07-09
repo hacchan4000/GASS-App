@@ -66,6 +66,22 @@ body {
     overflow: hidden;
 }
 
+.main2{
+    position: relative;
+    width: 440px;
+    height:500px;
+    background: transparent;
+    border: 2px solid rgb(241, 234, 234);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 30px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: height .2s ease;
+    overflow: hidden;
+}
+
 .main.aktif{
     margin-top: 150px;
     height: 520px;

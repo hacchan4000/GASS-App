@@ -12,11 +12,11 @@ Route::middleware("auth")->group(function(){
 });
 
 
-Route::get('/login', [AuthController::class, "login"])->name("login");
-Route::post('/login', [AuthController::class, "loginPost"])->name("login.post");
+Route::get('/loginbaru', [AuthController::class, "login"])->name("loginbaru");
+Route::post('/loginbaru', [AuthController::class, "loginPost"])->name("login.post");
 
-Route::get('/register', [AuthController::class, "register"])->name("register");
-Route::post('/register', [AuthController::class, "registerPost"])->name("register.post");
+Route::get('/registerbaru', [AuthController::class, "register"])->name("registerbaru");
+Route::post('/registerbaru', [AuthController::class, "registerPost"])->name("register.post");
 
 Route::get('dashboard', function () {
     return Inertia::render('Dashboard');
