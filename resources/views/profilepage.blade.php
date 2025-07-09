@@ -17,7 +17,7 @@
                     <ion-icon name="create-outline" class="edit"></ion-icon>
                     <span>Edit Profile</span>
                 </button>
-                <button class="edit-button">
+                <button onclick="window.location.href='{{ route('changepassword') }}'" class="edit-button">
                     <ion-icon name="key-outline" class="password"></ion-icon>
                     <span>Change Password</span>
                 </button>

@@ -19,5 +19,9 @@ Route::get('/editprofile', function () {
     return view('editprofile');
 })->name('edit.profile');
 
+Route::get('/changepassword', function () {
+    return view('changepassword');
+})->name('changepassword');
+
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
