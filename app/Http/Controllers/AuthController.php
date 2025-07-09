@@ -14,7 +14,7 @@ class AuthController extends Controller
     }
     function loginPost(Request $request){
         $request->validate([   
-            "email" => "required|email|unique:users",
+            "email" => "required|email",
             "password" => "required",
             "tipe" => "required|in:0,1",
         ]);
@@ -32,8 +32,8 @@ class AuthController extends Controller
 
     function registerPost(Request $request){
         $request->validate([
-            "nama" => "required|unique:users",
-            "email" => "required|email|unique:users",
+            "nama" => "required|unique:users,name",
+            "email" => "required|email",
             "phone" => "required",
             "password" => "required",
             "tipe" => "required|in:0,1",
@@ -42,6 +42,7 @@ class AuthController extends Controller
         $user = new User();
         $user->name = $request->nama;
         $user->email = $request->email;
+        $user->phone = $request->phone;
         $user->password = Hash::make($request->password);
         $user->tipe = $request->tipe;
 

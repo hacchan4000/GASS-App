@@ -1,6 +1,6 @@
 <!-- disini kita extend file default.blade.php di folder layouts jadi semua konten di page default bakal nampak disini juga gt -->
-@extends("layouts.default");
-@section("title", "register")
+@extends("layouts.default")
+@section("title", "registerbaru")
 @section("content")
 <!-- di dalem sini bsa isi konten dalam login -->
 <header>
@@ -31,7 +31,7 @@
                     <h1 class="card-header text-center">SIGN-UP</h1>
                     <div class="card-body">
                         <!-- form login -->
-                        <form method="POST" action="{{ route("login.post")}}">
+                        <form method="POST" action="{{ route("register.post")}}">
                             @csrf
                             <!-- input nama user -->
                             <div class="input-box">
@@ -45,7 +45,7 @@
 
                             <div class="input-box">
                                 <span class="icon"><ion-icon name="call"></ion-icon></span>
-                                <input type="text" placeholder="" required name="Phone">
+                                <input type="text" placeholder="" required name="phone">
                                 <label>Phone number</label>
                             </div>
 
