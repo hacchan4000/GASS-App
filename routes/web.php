@@ -66,11 +66,5 @@ Route::get('dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-
-Route::get('/changepassword', function () {
-    return view('changepassword');
-})->name('changepassword');
-
-
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
