@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>notifikasi</title>
- <link rel="stylesheet" href="{{ asset('css/style/notifikasi.css') }}">
+ <link rel="stylesheet" href="{{ asset('style/notif.css') }}">
 </head>
 <body>
   <div class="background">
