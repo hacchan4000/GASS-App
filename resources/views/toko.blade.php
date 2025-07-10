@@ -92,6 +92,6 @@
     </div>
   </div>
 </div>
-
+@include('partials.sidebar') {{-- Sidebar --}}
 </body>
 </html>

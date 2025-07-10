@@ -33,6 +33,8 @@ Route::middleware("auth")->group(function(){
     Route::get('/toko', function () {
         return view('toko'); 
     })->name('toko');
+
+    Route::post('/motor/store', [MotorController::class, 'store'])->name('motor.store');
 });
 
 
