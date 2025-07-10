@@ -36,7 +36,13 @@ Route::middleware("auth")->group(function(){
 
     Route::post('/motor/store', [MotorController::class, 'store'])->name('motor.store');
 });
+Route::get('/notif', function () {
+    return view('notifikasi');
+});
 
+Route::get('/notif/detail/{id}', function ($id) {
+    return view('detailnotif', ['id' => $id]);
+});
 
 
 Route::get('/loginbaru', [AuthController::class, "login"])->name("loginbaru");
