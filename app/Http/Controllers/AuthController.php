@@ -20,7 +20,13 @@ class AuthController extends Controller
         ]);
         $credential = $request->only("email", "password");
         if (Auth::attempt($credential)) {
-            return redirect()->intended(route("home"));
+            $user = Auth::user();
+            
+            if ($user->tipe == "1") {
+                return redirect()->route("homepeminjam");
+            } else {
+                return redirect()->route("homepembeli");
+            }
         }
 
         return redirect(route("loginbaru"))->with("error", "Login gagal");

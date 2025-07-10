@@ -8,7 +8,10 @@ use Inertia\Inertia;
 Route::middleware("auth")->group(function(){
     Route::get('/', function () {
         return view('homepembeli');
-    })->name('home');
+    })->name('homepembeli');
+    Route::get('/homepeminjam', function () {
+        return view('homepeminjam'); 
+    })->name('homepeminjam');
 
     Route::get('/profile', function () {
         return view('profilepage'); 

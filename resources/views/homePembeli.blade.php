@@ -188,7 +188,7 @@
               </li>
               <ul class="menu-links">
                 <li class="nav-link">
-                  <a href="{{ route('home') }}">
+                  <a href="{{ route('homepembeli') }}">
                     <i class='bx bx-home-alt icon' ></i>
                     <span class="text nav-text">Home</span>
                   </a>
