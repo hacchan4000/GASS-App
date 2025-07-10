@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MotorController;
+use App\Models\Motor;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -21,6 +23,9 @@ Route::middleware("auth")->group(function(){
     Route::get('/editprofile', function () {
         return view('editprofile');
     })->name('edit.profile');
+    Route::get('/changepassword', function () {
+        return view('changepassword');
+    })->name('changepassword');
 
     Route::get('/notif', function () {
         return view('notif'); 
@@ -33,9 +38,14 @@ Route::middleware("auth")->group(function(){
     Route::get('/toko', function () {
         return view('toko'); 
     })->name('toko');
-
-    Route::get('/storelist', function () {
-        return view('storelist'); 
+    
+    Route::get('/stores', function () {
+        // Ambil daftar email pemilik motor yang unik (distinct)
+        $pemilikEmails = Motor::distinct()->pluck('pemilik_motor');
+        // Ambil data user yang email-nya cocok dengan pemilik_motor
+        $pemilikUsers = User::whereIn('email', $pemilikEmails)->get();
+        
+        return view('storelist', ['pemilikUsers' => $pemilikUsers]);
     })->name('storelist');
 
     Route::get('/detail/{store}', function ($store) {

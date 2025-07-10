@@ -22,10 +22,13 @@
   </div>
 
   <div class="store-list-container">
-    @include('partials.storecard', ['nama' => 'Toko Rent Kuta', 'alamat' => 'Jalan Kuta Art Market', 'rating' => 4.5, 'image' => 'https://storage.googleapis.com/a1aa/image/1ad253b5-1226-44a9-efc7-a1487faab48c.jpg'])
-
-    @include('partials.storecard', ['nama' => 'Dewa Motor', 'alamat' => 'Jalan Monkey Forest', 'rating' => 5, 'image' => 'https://storage.googleapis.com/a1aa/image/bcee3284-fab2-4ae4-9f5e-883cc2c5608c.jpg'])
-
-    @include('partials.storecard', ['nama' => 'Matic Rental', 'alamat' => 'Jalan Nelayan Canggu', 'rating' => 5, 'image' => 'https://storage.googleapis.com/a1aa/image/95929cd8-86e9-4797-24fa-13855f07a886.jpg'])
+    @foreach ($pemilikUsers as $user)
+    @include('partials.storecard', [
+      'nama' => $user->name ?? 'Nama Toko',
+      'alamat' => $user->alamat ?? 'Alamat tidak tersedia',
+      'rating' => 4.5, // opsional bisa diganti dari relasi nanti
+      'image' => $user->foto_toko ?? 'gambar/rental.png'
+    ])
+  @endforeach
   </div>
 @endsection

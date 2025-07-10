@@ -6,12 +6,9 @@
       <p class="type">Motorcycle</p>
       <p class="address">{{ $alamat }}</p>
       <div class="stars">
-        @for ($i = 1; $i <= floor($rating); $i++)
-          <i class="fas fa-star"></i>
-        @endfor
-        @if ($rating - floor($rating) >= 0.5)
-          <i class="fas fa-star-half-alt"></i>
-        @endif
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
       </div>
       <hr class="mini-divider" />
       <div class="bottom-line">
