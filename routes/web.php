@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MotorController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -31,6 +32,8 @@ Route::middleware("auth")->group(function(){
     Route::get('/toko', function () {
         return view('toko'); 
     })->name('toko');
+
+    Route::post('/motor/store', [MotorController::class, 'store'])->name('motor.store');
 
 });
 

@@ -72,7 +72,7 @@
             </a>
         </li>
         <li class="nav-link">
-            <a href="#">
+            <a href="{{ route('loginbaru') }}">
               <i class='bx bx-log-out icon' ></i>
               <span class="text nav-text">Log out</span>
             </a>

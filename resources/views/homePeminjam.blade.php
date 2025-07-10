@@ -128,63 +128,55 @@
   <div class="bg-white rounded-lg p-6 w-full max-w-lg shadow-lg relative">
     <h2 class="text-xl font-bold mb-4">Tambah Motor Baru</h2>
     
-    <form action="#" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('motor.store') }}" method="POST" enctype="multipart/form-data">
       @csrf
-    
+  
       <!-- Gambar -->
       <div class="mb-4">
         <label class="block text-sm font-medium text-gray-700 mb-1">Foto Motor</label>
-        <input type="file" name="gambar" id="gambar"
-          class="w-full border border-gray-300 rounded px-3 py-2 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100" />
+        <input type="file" name="gambar" required
+          class="w-full border rounded px-3 py-2 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
       </div>
-    
+  
       <!-- Jenis Motor -->
       <div class="mb-4">
-        <label for="tipe" class="block text-sm font-medium text-gray-700 mb-1">Jenis Motor</label>
-        <select name="tipe" id="tipe" required
-          class="w-full border border-gray-300 rounded px-3 py-2 bg-white text-gray-800">
-          <option value="">-- Pilih Jenis --</option>
-          <option value="nmax">NMAX</option>
-          <option value="pcx">PCX</option>
-          <option value="vespa">Vespa</option>
-          <option value="scoopy">Scoopy</option>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Jenis Motor</label>
+        <select name="jenis_motor" class="w-full border rounded px-3 py-2 bg-white text-gray-800" required>
+            <option value="">-- Pilih Jenis --</option>
+            <option value="nmax">NMAX</option>
+            <option value="pcx">PCX</option>
+            <option value="vespa">Vespa</option>
+            <option value="scoopy">Scoopy</option>
         </select>
       </div>
-    
+  
       <!-- Nomor Polisi -->
       <div class="mb-4">
-        <label class="block text-sm font-medium text-gray-700 mb-1">Nomor Polisi</label>
-        <input type="text" name="nomor_polisi"
-          class="w-full border border-gray-300 rounded px-3 py-2" placeholder="DK 1234 XX" required>
+        <label class="block text-sm font-medium">Nomor Polisi</label>
+        <input type="text" name="nomor_polisi" class="w-full border rounded px-3 py-2" required>
       </div>
-    
-      <!-- Harga Sewa + Durasi -->
+  
+      <!-- Harga + Durasi -->
       <div class="mb-4">
-        <label class="block text-sm font-medium text-gray-700 mb-1">Harga Sewa</label>
+        <label class="block text-sm font-medium">Harga Sewa</label>
         <div class="flex gap-2">
-          <input type="number" name="harga"
-            class="w-2/3 border border-gray-300 rounded px-3 py-2" placeholder="750000" required>
-          <select name="durasi" id="durasi"
-            class="w-1/3 border border-gray-300 rounded px-3 py-2 bg-white text-gray-800">
+          <input type="number" name="harga" class="w-2/3 border rounded px-3 py-2" required>
+          <select name="durasi" class="w-1/3 border rounded px-3 py-2 bg-white text-gray-800">
             <option value="hari">/hari</option>
             <option value="minggu">/minggu</option>
             <option value="bulan">/bulan</option>
           </select>
         </div>
       </div>
-    
-      <!-- Tombol Aksi -->
+  
       <div class="flex justify-end gap-2 mt-6">
         <button type="button" id="closeModalBtn"
-          class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded shadow-sm">
-          Batal
-        </button>
+          class="bg-gray-300 text-black px-4 py-2 rounded">Batal</button>
         <button type="submit"
-          class="bg-green-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow-sm">
-          Simpan
-        </button>
+          class="bg-blue-600 text-white px-4 py-2 rounded">Simpan</button>
       </div>
-    </form>
+  </form>
+  
     
 
     <!-- Close Icon (optional) -->

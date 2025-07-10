@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nomor_polisi');
             $table->string('jenis');
             $table->integer('harga');
-            $table->boolean('is_availabe')->default(true);
+            $table->boolean('is_available')->default(true);
             $table->timestamps();
         });
     }
