@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MotorController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -8,7 +9,10 @@ use Inertia\Inertia;
 Route::middleware("auth")->group(function(){
     Route::get('/', function () {
         return view('homepembeli');
-    })->name('home');
+    })->name('homepembeli');
+    Route::get('/homepeminjam', function () {
+        return view('homepeminjam'); 
+    })->name('homepeminjam');
 
     Route::get('/profile', function () {
         return view('profilepage'); 
@@ -29,18 +33,6 @@ Route::middleware("auth")->group(function(){
     Route::get('/toko', function () {
         return view('toko'); 
     })->name('toko');
-
-    Route::get('/storelist', function () {
-        return view('storelist');
-    })->name('store.list');
-
-    Route::get('/store/{id}', function ($id) {
-    return view('storedetail', ['id' => $id]);
-})->name('store.detail');
-});
-
-Route::get('/detail', function () {
-    return view('detailtoko');
 });
 
 
