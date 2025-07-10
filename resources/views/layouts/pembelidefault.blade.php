@@ -7,6 +7,7 @@
  <link rel="stylesheet" href="{{ asset('style/sidebar.css') }}?v=1.2">
  <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
  <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+ 
  <title>@yield('title', 'GASS')</title>
 
  <!-- Leaflet CSS -->
@@ -21,7 +22,7 @@
 <body>
  <div class="background">
    <div class="inner-background">
-     @include('partials.headerhome') {{-- Header --}}
+     @include('partials.headerpembeli') {{-- Header --}}
      <div class="inner-body">
        @yield('content') {{-- Konten halaman --}}
      </div>

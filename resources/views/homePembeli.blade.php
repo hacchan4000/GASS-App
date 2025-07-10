@@ -1,4 +1,4 @@
-@extends('layouts.homedefault')
+@extends('layouts.pembelidefault')
 
 @section('title', 'Dashboard Pembeli')
 
