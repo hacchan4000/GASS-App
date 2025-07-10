@@ -22,7 +22,9 @@
             </button>
         </div>
         <div class="formdata">
-            <form class="form-container">
+            <form class="form-container" method="POST" action="{{ route('profile.update') }}">
+                @csrf
+                @method('PATCH')
                 <label for="funame">Username:</label><br>
                 <input type="text" id="funame" name="funame"><br>
                 <label for="fname">Fullname:</label><br>
