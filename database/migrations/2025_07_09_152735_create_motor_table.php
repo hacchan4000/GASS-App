@@ -16,7 +16,6 @@ return new class extends Migration
             $table->integer('id_motor');
             $table->string('nomor_polisi');
             $table->string('jenis');
-            $table->string('APD');
             $table->integer('harga');
             $table->boolean('is_availabe')->default(true);
             $table->timestamps();

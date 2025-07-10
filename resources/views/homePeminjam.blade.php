@@ -85,7 +85,7 @@
   </div>
   <div class="add-catalog-body">
       <div class="add-button">
-          <ion-icon name="add-circle-outline"></ion-icon>
+          <button>⊕</button>
       </div>
   </div>
 </div>
@@ -121,16 +121,101 @@
       </div>            
   </div>
 </div>
+
+<!-- Modal Background -->
+<div id="addModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 hidden items-center justify-center">
+  <!-- Modal Content -->
+  <div class="bg-white rounded-lg p-6 w-full max-w-lg shadow-lg relative">
+    <h2 class="text-xl font-bold mb-4">Tambah Motor Baru</h2>
+    
+    <form action="#" method="POST" enctype="multipart/form-data">
+      @csrf
+    
+      <!-- Gambar -->
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700 mb-1">Foto Motor</label>
+        <input type="file" name="gambar" id="gambar"
+          class="w-full border border-gray-300 rounded px-3 py-2 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100" />
+      </div>
+    
+      <!-- Jenis Motor -->
+      <div class="mb-4">
+        <label for="tipe" class="block text-sm font-medium text-gray-700 mb-1">Jenis Motor</label>
+        <select name="tipe" id="tipe" required
+          class="w-full border border-gray-300 rounded px-3 py-2 bg-white text-gray-800">
+          <option value="">-- Pilih Jenis --</option>
+          <option value="nmax">NMAX</option>
+          <option value="pcx">PCX</option>
+          <option value="vespa">Vespa</option>
+          <option value="scoopy">Scoopy</option>
+        </select>
+      </div>
+    
+      <!-- Nomor Polisi -->
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700 mb-1">Nomor Polisi</label>
+        <input type="text" name="nomor_polisi"
+          class="w-full border border-gray-300 rounded px-3 py-2" placeholder="DK 1234 XX" required>
+      </div>
+    
+      <!-- Harga Sewa + Durasi -->
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700 mb-1">Harga Sewa</label>
+        <div class="flex gap-2">
+          <input type="number" name="harga"
+            class="w-2/3 border border-gray-300 rounded px-3 py-2" placeholder="750000" required>
+          <select name="durasi" id="durasi"
+            class="w-1/3 border border-gray-300 rounded px-3 py-2 bg-white text-gray-800">
+            <option value="hari">/hari</option>
+            <option value="minggu">/minggu</option>
+            <option value="bulan">/bulan</option>
+          </select>
+        </div>
+      </div>
+    
+      <!-- Tombol Aksi -->
+      <div class="flex justify-end gap-2 mt-6">
+        <button type="button" id="closeModalBtn"
+          class="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded shadow-sm">
+          Batal
+        </button>
+        <button type="submit"
+          class="bg-green-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow-sm">
+          Simpan
+        </button>
+      </div>
+    </form>
+    
+
+    <!-- Close Icon (optional) -->
+    <button id="closeModalX" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl">&times;</button>
+  </div>
+</div>
+
 @endsection
 
-       
+@push('scripts')
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('addModal');
+    const openBtn = document.querySelector('.add-button');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const closeX = document.getElementById('closeModalX');
 
+    openBtn.addEventListener('click', () => {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    });
 
-            
-            
+    closeBtn.addEventListener('click', () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    });
 
-            
-   
-
-</body>
-</html>
+    closeX.addEventListener('click', () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    });
+  });
+</script>
+@endpush
