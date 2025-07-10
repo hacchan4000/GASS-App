@@ -34,6 +34,14 @@ Route::middleware("auth")->group(function(){
         return view('toko'); 
     })->name('toko');
 
+    Route::get('/storelist', function () {
+        return view('storelist'); 
+    })->name('storelist');
+
+    Route::get('/detail?store=kuta', function () {
+        return view('detailtoko'); 
+    });
+
     Route::post('/motor/store', [MotorController::class, 'store'])->name('motor.store');
 });
 
