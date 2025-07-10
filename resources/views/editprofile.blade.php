@@ -17,9 +17,9 @@
                 <div class="item"><ion-icon name="logo-facebook" class="facebook"></ion-icon><span>Add Facebook</span></div>
                 <div class="item"><ion-icon name="logo-twitter" class="twitter"></ion-icon><span>Add Twitter</span></div>
             </div>
-            <div class="save">
+            <button class="save">
                 <p>Save Change</p>
-            </div>
+            </button>
         </div>
         <div class="formdata">
             <form class="form-container">
