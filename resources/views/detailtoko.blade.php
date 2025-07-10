@@ -101,8 +101,10 @@
     }
   ];
 
-  allMotors
-  .filter(motor => motor.store === storeFullName)
+ const container = document.getElementById("motor-container");
+
+allMotors
+  .filter(motor => motor.store === "Toko Rent Kuta")
   .forEach(motor => {
     const card = document.createElement("div");
     card.className = "motor-card";
@@ -120,20 +122,8 @@
     container.appendChild(card);
   });
 
-  const container = document.getElementById("motor-container");
-
-  allMotors.forEach(motor => {
-    container.innerHTML += `
-      <div class="motor-card">
-        <img src="${motor.image}" alt="${motor.name}">
-        <h3>${motor.name}</h3>
-        <p><strong>Toko:</strong> ${motor.store}</p>
-        <p>${motor.description}</p>
-      </div>
-    `;
-  });
-  document.querySelector(".close-button").addEventListener("click", () => {
+document.querySelector(".close-button").addEventListener("click", () => {
   document.getElementById("checkout-modal").classList.add("hidden");
 });
-</script>
+
 
