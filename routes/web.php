@@ -17,6 +17,7 @@ Route::middleware("auth")->group(function(){
     Route::get('/profile', function () {
         return view('profilepage'); 
     })->name('profile');
+
     Route::get('/editprofile', function () {
         return view('editprofile');
     })->name('edit.profile');
@@ -32,10 +33,8 @@ Route::middleware("auth")->group(function(){
     Route::get('/toko', function () {
         return view('toko'); 
     })->name('toko');
-
-    Route::post('/motor/store', [MotorController::class, 'store'])->name('motor.store');
-
 });
+
 
 
 Route::get('/loginbaru', [AuthController::class, "login"])->name("loginbaru");
@@ -61,6 +60,7 @@ Route::get('dashboard', function () {
 Route::get('/changepassword', function () {
     return view('changepassword');
 })->name('changepassword');
+
 
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
