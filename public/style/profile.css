@@ -119,6 +119,28 @@ h1{
     font-size: 16px;
     cursor: pointer;
 }
+.edit-button {
+    background-color: #CFE3DC; 
+    color: black;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-button:hover {
+    background-color: rgb(177, 208, 200);
+}
+
+.edit-icon {
+    font-size: 16px;
+}
 .password{
     width: 23px;
     height: 23px;

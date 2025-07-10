@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class AuthController extends Controller
 {
     public function login(){
@@ -14,13 +15,19 @@ class AuthController extends Controller
     }
     function loginPost(Request $request){
         $request->validate([   
-            "email" => "required|email|unique:users",
+            "email" => "required|email",
             "password" => "required",
             "tipe" => "required|in:0,1",
         ]);
         $credential = $request->only("email", "password");
         if (Auth::attempt($credential)) {
-            return redirect()->intended(route("home"));
+            $user = Auth::user();
+            
+            if ($user->tipe == "1") {
+                return redirect()->route("homepeminjam");
+            } else {
+                return redirect()->route("homepembeli");
+            }
         }
 
         return redirect(route("loginbaru"))->with("error", "Login gagal");
@@ -32,8 +39,8 @@ class AuthController extends Controller
 
     function registerPost(Request $request){
         $request->validate([
-            "nama" => "required|unique:users",
-            "email" => "required|email|unique:users",
+            "nama" => "required|unique:users,name",
+            "email" => "required|email",
             "phone" => "required",
             "password" => "required",
             "tipe" => "required|in:0,1",
@@ -42,6 +49,7 @@ class AuthController extends Controller
         $user = new User();
         $user->name = $request->nama;
         $user->email = $request->email;
+        $user->phone = $request->phone;
         $user->password = Hash::make($request->password);
         $user->tipe = $request->tipe;
 

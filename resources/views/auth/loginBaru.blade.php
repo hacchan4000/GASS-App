@@ -1,6 +1,6 @@
 <!-- disini kita extend file default.blade.php di folder layouts jadi semua konten di page default bakal nampak disini juga gt -->
 @extends("layouts.default")
-@section("title", "login")
+@section("title", "loginbaru")
 @section("content")
 <!-- di dalem sini bsa isi konten dalam login -->
 
