@@ -41,5 +41,15 @@ Route::get('dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/notifikasi', function () {
+    return view('notifikasi');
+});
+
+Route::get('/notifikasi/detail/{id}', function ($id) {
+    return view('detailnotifikasi', ['id' => $id]);
+});
+
+
+
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
