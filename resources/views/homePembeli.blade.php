@@ -33,7 +33,7 @@
   <div class="widgets">
     <div class="left-column">
       <div class="map-container">
-        <img class="rentals-nearby" src="{{ asset('gambar/peta.png') }}" alt="">
+        <div id="map" style="height: 300px; border-radius: 15px;"></div>
       </div>
     </div>
   
@@ -61,3 +61,23 @@
     <div class="rec-body"></div>
   </div>
 @endsection
+
+@push('scripts')
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Set default map view (contoh: Denpasar, Bali)
+        const map = L.map('map').setView([-8.65, 115.2167], 13);
+
+        // Gunakan tile dari OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Tambahkan pin lokasi rental contoh
+        L.marker([-8.65, 115.2167]).addTo(map)
+            .bindPopup("<b>Wayan Rentals</b><br>Jl. Sunset Road.")
+            .openPopup();
+    });
+</script>
+@endpush
+
