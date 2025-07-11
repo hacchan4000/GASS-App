@@ -64,11 +64,18 @@ Route::middleware("auth")->group(function(){
     
         return view('detailtoko', [
             'storeName' => $user->name,
+            'nomor'=> $user->phone,
             'motors' => $motors,
         ]);
     })->name('detailtoko');
 
     Route::post('/motor/store', [MotorController::class, 'store'])->name('motor.store');
+
+    Route::get('/catalog', function () {
+        $user = Auth::user();
+        $motors = Motor::where('pemilik_motor', $user->email)->get();
+        return view('catalog', compact('motors'));
+    })->name('catalog')->middleware('auth');
 });
 
 
@@ -80,7 +87,10 @@ Route::get('/registerbaru', [AuthController::class, "register"])->name("register
 Route::post('/registerbaru', [AuthController::class, "registerPost"])->name("register.post");
 
 
+Route::post('/motor/{id}/toggle-status', [MotorController::class, 'toggleStatus'])->name('motor.toggle');
 
+// Untuk menghapus motor
+Route::delete('/motor/{id}/delete', [MotorController::class, 'destroy'])->name('motor.destroy');
 
 
 

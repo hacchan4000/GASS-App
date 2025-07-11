@@ -16,6 +16,7 @@
                 <hr class="mini-divider" />
                 <div class="bottom-line">
                     <span><strong>Status:</strong> {{ $motor->is_available ? 'Tersedia' : 'Tidak tersedia' }}</span>
+                    <a href="https://wa.me/{{$nomor}}"><ion-icon name="chatbubble-outline"></ion-icon>Chat</a>
                 </div>
             </div>
         </div>
