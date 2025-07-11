@@ -27,17 +27,20 @@ class ProfileController extends Controller
     /**
      * Update the user's profile information.
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    public function update(Request $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+        $user = auth()->user(); // atau User::find($id) kalau kamu pakai id
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
-        }
+        $user->update([
+            'name' => $request->name,
+            'fullname' => $request->fullname,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'alamat' => $request->alamat,
 
-        $request->user()->save();
+        ]);
 
-        return to_route('profile.edit');
+        return redirect()->back()->with('success', 'Profile updated!');
     }
 
     /**
@@ -60,4 +63,5 @@ class ProfileController extends Controller
 
         return redirect('/');
     }
+
 }

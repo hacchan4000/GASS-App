@@ -6,6 +6,8 @@ use App\Models\Motor;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\Settings\ProfileController;
+use App\Http\Controllers\Settings\PasswordController;
 
 
 Route::middleware("auth")->group(function(){
@@ -17,7 +19,9 @@ Route::middleware("auth")->group(function(){
     })->name('homepeminjam');
 
     Route::get('/profile', function () {
-        return view('profilepage'); 
+        $user = auth()->user();
+        return view('profilepage', ['user' => $user]);
+        
     })->name('profile');
 
     Route::get('/editprofile', function () {
@@ -87,6 +91,10 @@ Route::get('/registerbaru', [AuthController::class, "register"])->name("register
 Route::post('/registerbaru', [AuthController::class, "registerPost"])->name("register.post");
 
 
+Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+Route::put('/changepassword', [PasswordController::class, 'update'])->name('password.update');
+
+
 Route::post('/motor/{id}/toggle-status', [MotorController::class, 'toggleStatus'])->name('motor.toggle');
 
 // Untuk menghapus motor
@@ -98,9 +106,19 @@ Route::delete('/motor/{id}/delete', [MotorController::class, 'destroy'])->name('
 
 
 
+
 Route::get('dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+
+Route::get('/changepassword', function () {
+    return view('changepassword');
+})->name('changepassword');
+
+
+
 
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';

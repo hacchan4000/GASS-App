@@ -10,7 +10,7 @@
     <div class="board">
         <div class="username">
             <img src="gambar/profile_picture.jpg" alt="Profile Picture" class="profile">
-            <p>username</p>
+            <p>{{ $user->name }}</p>
         
             <div class="option">
                 <button onclick="window.location.href='{{ route('edit.profile') }}'" class="edit-button">
@@ -32,19 +32,19 @@
                     <div class="info-grid">
                     <div class="info-item">
                         <div class="info-label">Full Name</div>
-                        <div class="info-value">Caecil</div>
+                        <div class="info-value">{{ $user->fullname ?? '-' }}</div>
                     </div>
                     <div class="info-item">
                         <div class="info-label">Email Address</div>
-                        <div class="info-value">apalah@gmail.com</div>
+                        <div class="info-value">{{ $user->email ?? '-' }}</div>
                     </div>
                     <div class="info-item">
                         <div class="info-label">Phone Number</div>
-                        <div class="info-value">081234567</div>
+                        <div class="info-value">{{ $user->phone ?? '-' }}</div>
                     </div>
                     <div class="info-item">
-                        <div class="info-label">City</div>
-                        <div class="info-value">Jimbaran</div>
+                        <div class="info-label">Adress</div>
+                        <div class="info-value">{{ $user->alamat ?? '-' }}</div>
                     </div>
                     </div>
                 </div>
@@ -54,9 +54,9 @@
                     <h1>Social Media</h1>
                 </div>
                 <div class="sosmed">
-                    <div class="apps"><ion-icon name="logo-instagram" class="logo"></ion-icon><span class="media">@naneun</span></div>
-                    <div class="apps"><ion-icon name="logo-facebook" class="logo"></ion-icon><span class="media">Naenun</span></div>
-                    <div class="apps"><ion-icon name="logo-twitter" class="logo"></ion-icon><span class="media">@naneun</span></div>
+                    <div class="apps"><ion-icon name="logo-instagram" class="logo"></ion-icon><span class="media">{{ $user->instagram ?? '-' }}</span></div>
+                    <div class="apps"><ion-icon name="logo-facebook" class="logo"></ion-icon><span class="media">{{ $user->facebook ?? '-' }}</span></div>
+                    <div class="apps"><ion-icon name="logo-twitter" class="logo"></ion-icon><span class="media">{{ $user->twitter ?? '-' }}</span></div>
                 </div>
             </div>
             <div class="status">
