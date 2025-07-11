@@ -4,6 +4,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MotorController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\Settings\ProfileController;
+use App\Http\Controllers\Settings\PasswordController;
 
 
 Route::middleware("auth")->group(function(){
@@ -15,7 +17,9 @@ Route::middleware("auth")->group(function(){
     })->name('homepeminjam');
 
     Route::get('/profile', function () {
-        return view('profilepage'); 
+        $user = auth()->user();
+        return view('profilepage', ['user' => $user]);
+        
     })->name('profile');
     Route::get('/editprofile', function () {
         return view('editprofile');
@@ -44,13 +48,8 @@ Route::post('/loginbaru', [AuthController::class, "loginPost"])->name("login.pos
 Route::get('/registerbaru', [AuthController::class, "register"])->name("registerbaru");
 Route::post('/registerbaru', [AuthController::class, "registerPost"])->name("register.post");
 
-
-
-
-
-
-
-
+Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+Route::put('/changepassword', [PasswordController::class, 'update'])->name('password.update');
 
 
 Route::get('dashboard', function () {
@@ -61,6 +60,7 @@ Route::get('dashboard', function () {
 Route::get('/changepassword', function () {
     return view('changepassword');
 })->name('changepassword');
+
 
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';

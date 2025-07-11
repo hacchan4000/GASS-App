@@ -13,23 +13,7 @@
 </head>
 
 <body>
-   <header>
-    <img class="logo-unud" src="gambar/background/newUnud.jpg" alt="">
-    <nav class="navigasi">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
-        
-       
-    </nav>
     
-    <a href="#" class="reg-link"> <!-- This is a comment -->
-        <button class="popUp-reg">Sign up</button>
-    </a>
-    
-   </header>
-
     <!-- berikut komponen" utama di halaman login mulai dari kotak/container login dan sign up -->
     <!-- inget div itu kaya bungkus, jd setiap kita mau bikin objek baru dalam web kita bungkus dengan div dlu trs div tsbt dikasi atribut class biar bsa kita edit" di css -->
     <div class="main">

@@ -17,24 +17,24 @@
                 <div class="item"><ion-icon name="logo-facebook" class="facebook"></ion-icon><span>Add Facebook</span></div>
                 <div class="item"><ion-icon name="logo-twitter" class="twitter"></ion-icon><span>Add Twitter</span></div>
             </div>
-            <button class="save">
-                <p>Save Change</p>
-            </button>
+            <button class="back" onclick="window.location.href='{{ route('profile') }}'">Back</button>
+
         </div>
         <div class="formdata">
             <form class="form-container" method="POST" action="{{ route('profile.update') }}">
                 @csrf
                 @method('PATCH')
-                <label for="funame">Username:</label><br>
-                <input type="text" id="funame" name="funame"><br>
-                <label for="fname">Fullname:</label><br>
-                <input type="text" id="fname" name="fname"><br>
+                <label for="name">Username:</label><br>
+                <input type="text" id="name" name="name" value="{{ old('name', Auth::user()->name) }}"><br>
+                <label for="fullname">Fullname:</label><br>
+                <input type="text" id="fullname" name="fullname" value="{{ old('fullname', Auth::user()->fullname) }}"><br>
                 <label for="phone">Phone Number:</label><br>
-                <input type="tel" name="phone" pattern="[0-9]{10,15}" required /><br>
+                <input type="tel" name="phone" value="{{ old('phone', Auth::user()->phone) }}" pattern="[0-9]{10,15}" required /><br>
                 <label for="email">Email Address:</label><br>
-                <input type="email" name="email" required /><br>
-                <label for="city">City:</label><br>
-                <input type="text" name="city" required /><br>
+                <input type="email" name="email" value="{{ old('email', Auth::user()->email) }}" required /><br>
+                <label for="alamat">Alamat:</label><br>
+                <input type="text" name="alamat" value="{{ old('alamat', Auth::user()->alamat) }}" required /><br>
+                <button class="save" type="submit">Save Change</button>
             </form>
         </div>
     </div>

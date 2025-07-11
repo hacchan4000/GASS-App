@@ -97,7 +97,7 @@ body{
     border-radius: 51px;
     align-content: center;
     position: fixed;
-    top: 500px;
+    top: 550px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -130,4 +130,17 @@ body{
   font-size: 16px;
   font-weight: bold;
   width: 100%;
+}
+.back{
+    width: 130px;
+    height: 32px;
+    background-color: rgb(149, 187, 176);
+    border-radius: 51px;
+    align-content: center;
+    position: fixed;
+    top: 500px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
