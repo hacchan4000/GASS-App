@@ -35,4 +35,37 @@ class MotorController extends Controller
 
         return redirect()->back()->with('success', 'Motor berhasil ditambahkan!');
     }
+
+    public function toggleStatus($id)
+    {
+        $motor = Motor::findOrFail($id);
+        // Ganti hanya jika usernya sama
+        if ($motor->pemilik_motor !== auth()->user()->email) {
+            abort(403);
+        }
+        
+        $motor->is_available = !$motor->is_available;
+        $motor->save();
+        
+        return redirect()->route('catalog')->with('success', 'Status motor berhasil diubah!');
+    }
+    
+    public function destroy($id)
+    {
+        $motor = Motor::findOrFail($id);
+        
+        if ($motor->pemilik_motor !== auth()->user()->email) {
+            abort(403);
+        }
+        
+        // Hapus file gambar jika perlu
+        
+        $gambarPath = public_path('gambar_motor/' . $motor->gambar_motor);
+        if (file_exists($gambarPath)) {
+            unlink($gambarPath);
+        }
+        
+        $motor->delete();
+        return redirect()->route('catalog')->with('success', 'Motor berhasil dihapus!');
+    }
 }

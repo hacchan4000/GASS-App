@@ -49,7 +49,7 @@
             </a>
           </li>
           <li class="nav-link">
-            <a href="{{ route('toko') }}">
+            <a href="{{ route('storelist') }}">
               <i class='bx bx-store-alt icon' ></i>
               <span class="text nav-text">Stores</span>
             </a>
