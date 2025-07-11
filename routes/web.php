@@ -49,7 +49,23 @@ Route::middleware("auth")->group(function(){
     })->name('storelist');
 
     Route::get('/detail/{store}', function ($store) {
-        return view('detailtoko', ['store' => $store]);
+        // Decode slug store ke nama asli toko
+        $decodedStore = Str::of($store)->replace('-', ' ')->title();
+    
+        // Cari user berdasarkan nama
+        $user = User::whereRaw('LOWER(name) = ?', [strtolower($decodedStore)])->first();
+    
+        if (!$user) {
+            abort(404, 'Toko tidak ditemukan.');
+        }
+    
+        // Cari motor berdasarkan email user tersebut
+        $motors = Motor::where('pemilik_motor', $user->email)->get();
+    
+        return view('detailtoko', [
+            'storeName' => $user->name,
+            'motors' => $motors,
+        ]);
     })->name('detailtoko');
 
     Route::post('/motor/store', [MotorController::class, 'store'])->name('motor.store');

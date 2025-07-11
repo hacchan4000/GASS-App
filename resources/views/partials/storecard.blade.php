@@ -1,6 +1,6 @@
 <!-- resources/views/partials/storecard.blade.php -->
 <a href="{{ route('detailtoko', ['store' => Str::slug($nama)]) }}" class="mini-card">
-    <img src="{{ $image }}" alt="{{ $nama }}" />
+  <img src="{{ $image }}" alt="{{ $nama }}" />
     <div class="mini-info">
       <h3>{{ $nama }}</h3>
       <p class="type">Motorcycle</p>
